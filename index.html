@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luminary Books | Home</title>
+  <link rel="stylesheet" href="src/styles/main.css">
+  <link rel="stylesheet" href="src/styles/home.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">JR. Books</a>
+        </div>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="active">Home</a></li>
+            <li class="nav-item"><a href="catalog.html">Books</a></li>
+            <li class="nav-item"><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="search-toggle" id="search-toggle" aria-label="Toggle search">
+            <span class="search-icon"></span>
+          </button>
+          <a href="#" class="cart-button" id="cart-button" aria-label="View cart">
+            <span class="cart-icon"></span>
+            <span class="cart-count">0</span>
+          </a>
+          <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+            <span class="menu-icon"></span>
+          </button>
+        </div>
+      </div>
+      <div class="search-container" id="search-container">
+        <div class="search-form">
+          <input type="search" placeholder="Search for books, authors, or genres..." class="search-input">
+          <button class="search-button">Search</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Discover worlds between pages</h1>
+          <p class="hero-subtitle">Curated collections of the finest literature delivered to your doorstep</p>
+          <div class="hero-actions">
+            <a href="catalog.html" class="btn btn-primary">Explore Collection</a>
+            <a href="#featured" class="btn btn-secondary">Featured Books</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.pexels.com/photos/1106468/pexels-photo-1106468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Stack of books on a wooden table" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="featured" id="featured">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Books</h2>
+          <a href="catalog.html" class="view-all">View All</a>
+        </div>
+        <div class="books-grid" id="featured-books">
+          <!-- Books will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Browse by Genre</h2>
+        </div>
+        <div class="categories-grid">
+          <a href="catalog.html?genre=fiction" class="category-card">
+            <div class="category-image">
+              <img src="https://images.pexels.com/photos/3747576/pexels-photo-3747576.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Fiction" loading="lazy">
+            </div>
+            <h3 class="category-title">Fiction</h3>
+          </a>
+          <a href="catalog.html?genre=non-fiction" class="category-card">
+            <div class="category-image">
+              <img src="https://images.pexels.com/photos/4238517/pexels-photo-4238517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Non-Fiction" loading="lazy">
+            </div>
+            <h3 class="category-title">Non-Fiction</h3>
+          </a>
+          <a href="catalog.html?genre=mystery" class="category-card">
+            <div class="category-image">
+              <img src="https://images.pexels.com/photos/1809340/pexels-photo-1809340.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Mystery & Thriller" loading="lazy">
+            </div>
+            <h3 class="category-title">Mystery & Thriller</h3>
+          </a>
+          <a href="catalog.html?genre=science" class="category-card">
+            <div class="category-image">
+              <img src="https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Science & Technology" loading="lazy">
+            </div>
+            <h3 class="category-title">Science & Technology</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2 class="newsletter-title">Join Our Reading Community</h2>
+          <p class="newsletter-description">Subscribe to receive updates on new releases, author events, and exclusive offers.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" placeholder="Your email address" required class="newsletter-input">
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">JR. Books</div>
+          <p class="footer-description">Curated collections of the finest literature delivered to your doorstep.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-section">
+            <h3 class="footer-section-title">Navigation</h3>
+            <ul class="footer-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="catalog.html">Books</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3 class="footer-section-title">Categories</h3>
+            <ul class="footer-nav">
+              <li><a href="catalog.html?genre=fiction">Fiction</a></li>
+              <li><a href="catalog.html?genre=non-fiction">Non-Fiction</a></li>
+              <li><a href="catalog.html?genre=mystery">Mystery & Thriller</a></li>
+              <li><a href="catalog.html?genre=science">Science & Technology</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3 class="footer-section-title">Information</h3>
+            <ul class="footer-nav">
+              <li><a href="about.html#contact">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Shipping Information</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 JR. Books. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook" class="social-link">FB</a>
+          <a href="#" aria-label="Instagram" class="social-link">IG</a>
+          <a href="#" aria-label="Twitter" class="social-link">TW</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cart-overlay">
+    <div class="cart-container">
+      <div class="cart-header">
+        <h2 class="cart-title">Your Cart</h2>
+        <button class="cart-close" id="cart-close" aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <!-- Cart items will be populated by JavaScript -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cart-total-amount">$0.00</span>
+        </div>
+        <button class="btn btn-primary checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="src/js/data/books.js"></script>
+  <script src="src/js/main.js"></script>
+  <script src="src/js/home.js"></script>
+</body>
+</html>

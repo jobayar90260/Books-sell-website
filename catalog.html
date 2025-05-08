@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luminary Books | Book Catalog</title>
+  <link rel="stylesheet" href="src/styles/main.css">
+  <link rel="stylesheet" href="src/styles/catalog.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">JR. Books</a>
+        </div>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="catalog.html" class="active">Books</a></li>
+            <li class="nav-item"><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="search-toggle" id="search-toggle" aria-label="Toggle search">
+            <span class="search-icon"></span>
+          </button>
+          <a href="#" class="cart-button" id="cart-button" aria-label="View cart">
+            <span class="cart-icon"></span>
+            <span class="cart-count">0</span>
+          </a>
+          <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+            <span class="menu-icon"></span>
+          </button>
+        </div>
+      </div>
+      <div class="search-container" id="search-container">
+        <div class="search-form">
+          <input type="search" id="catalog-search" placeholder="Search for books, authors, or genres..." class="search-input">
+          <button class="search-button" id="search-button">Search</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="catalog-header">
+      <div class="container">
+        <h1 class="catalog-title">Book Catalog</h1>
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a> &gt; <span>Books</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog">
+      <div class="container">
+        <div class="catalog-container">
+          <aside class="filters">
+            <div class="filter-section">
+              <h3 class="filter-title">Genres</h3>
+              <div class="filter-options" id="genre-filters">
+                <!-- Will be populated by JavaScript -->
+              </div>
+            </div>
+            <div class="filter-section">
+              <h3 class="filter-title">Price Range</h3>
+              <div class="price-range">
+                <div class="price-slider-container">
+                  <input type="range" id="price-slider" min="0" max="100" value="100" class="price-slider">
+                </div>
+                <div class="price-inputs">
+                  <span>$0</span>
+                  <span id="price-value">$100</span>
+                </div>
+              </div>
+            </div>
+            <div class="filter-section">
+              <h3 class="filter-title">Ratings</h3>
+              <div class="filter-options" id="rating-filters">
+                <label class="filter-option">
+                  <input type="checkbox" name="rating" value="4"> 4+ Stars
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" name="rating" value="3"> 3+ Stars
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" name="rating" value="2"> 2+ Stars
+                </label>
+              </div>
+            </div>
+            <div class="filter-section">
+              <h3 class="filter-title">Availability</h3>
+              <div class="filter-options">
+                <label class="filter-option">
+                  <input type="checkbox" name="availability" value="in-stock"> In Stock
+                </label>
+                <label class="filter-option">
+                  <input type="checkbox" name="availability" value="pre-order"> Pre-Order
+                </label>
+              </div>
+            </div>
+            <button class="btn btn-secondary" id="clear-filters">Clear Filters</button>
+          </aside>
+          
+          <div class="catalog-content">
+            <div class="catalog-header-controls">
+              <div class="results-count">
+                <span id="total-count">0</span> books found
+              </div>
+              <div class="sort-controls">
+                <label for="sort-select">Sort by:</label>
+                <select id="sort-select" class="sort-select">
+                  <option value="relevance">Relevance</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
+                  <option value="newest">Newest</option>
+                </select>
+              </div>
+              <div class="view-controls">
+                <button class="view-btn active" data-view="grid" aria-label="Grid view">
+                  <span class="grid-icon"></span>
+                </button>
+                <button class="view-btn" data-view="list" aria-label="List view">
+                  <span class="list-icon"></span>
+                </button>
+              </div>
+            </div>
+            
+            <div class="books-container grid-view" id="books-container">
+              <!-- Books will be populated by JavaScript -->
+            </div>
+            
+            <div class="pagination" id="pagination">
+              <!-- Pagination will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">JR. Books</div>
+          <p class="footer-description">Curated collections of the finest literature delivered to your doorstep.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-section">
+            <h3 class="footer-section-title">Navigation</h3>
+            <ul class="footer-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="catalog.html">Books</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3 class="footer-section-title">Categories</h3>
+            <ul class="footer-nav">
+              <li><a href="catalog.html?genre=fiction">Fiction</a></li>
+              <li><a href="catalog.html?genre=non-fiction">Non-Fiction</a></li>
+              <li><a href="catalog.html?genre=mystery">Mystery & Thriller</a></li>
+              <li><a href="catalog.html?genre=science">Science & Technology</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3 class="footer-section-title">Information</h3>
+            <ul class="footer-nav">
+              <li><a href="about.html#contact">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Shipping Information</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 JR. Books. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook" class="social-link">FB</a>
+          <a href="#" aria-label="Instagram" class="social-link">IG</a>
+          <a href="#" aria-label="Twitter" class="social-link">TW</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cart-overlay">
+    <div class="cart-container">
+      <div class="cart-header">
+        <h2 class="cart-title">Your Cart</h2>
+        <button class="cart-close" id="cart-close" aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <!-- Cart items will be populated by JavaScript -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cart-total-amount">$0.00</span>
+        </div>
+        <button class="btn btn-primary checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="src/js/data/books.js"></script>
+  <script src="src/js/main.js"></script>
+  <script src="src/js/catalog.js"></script>
+</body>
+</html>

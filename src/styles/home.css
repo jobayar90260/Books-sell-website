@@ -1,0 +1,248 @@
+/* Hero Section */
+.hero {
+  padding: var(--spacing-12) 0;
+  background-color: var(--primary-lightest);
+  overflow: hidden;
+}
+
+.hero .container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-4);
+  color: var(--primary-dark);
+  line-height: 1.2;
+  animation: slideInLeft 0.6s ease;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-6);
+  color: var(--neutral-700);
+  animation: slideInLeft 0.8s ease;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-4);
+  animation: slideInLeft 1s ease;
+}
+
+.hero-image {
+  flex: 1;
+  position: relative;
+  animation: slideInRight 0.8s ease;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: perspective(800px) rotateY(-8deg);
+  transition: var(--transition);
+}
+
+.hero-image:hover img {
+  transform: perspective(800px) rotateY(-2deg) translateY(-5px);
+}
+
+/* Featured Section */
+.featured {
+  padding: var(--spacing-16) 0;
+}
+
+.featured .books-grid {
+  margin-top: var(--spacing-6);
+}
+
+/* Categories Section */
+.categories {
+  padding: var(--spacing-16) 0;
+  background-color: var(--neutral-100);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-6);
+}
+
+.category-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 3/2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  color: var(--white);
+}
+
+.category-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.category-card:hover .category-image img {
+  transform: scale(1.05);
+}
+
+.category-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+.category-title {
+  position: relative;
+  z-index: 2;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0;
+}
+
+/* Newsletter Section */
+.newsletter {
+  padding: var(--spacing-16) 0;
+  background-color: var(--primary-dark);
+  color: var(--white);
+}
+
+.newsletter-content {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter-title {
+  color: var(--white);
+  font-size: 2rem;
+  margin-bottom: var(--spacing-4);
+}
+
+.newsletter-description {
+  color: var(--neutral-300);
+  margin-bottom: var(--spacing-6);
+  font-size: 1.125rem;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: var(--spacing-3) var(--spacing-4);
+  border: none;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  font-size: 1rem;
+}
+
+.newsletter-form .btn {
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero .container {
+    flex-direction: column;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+  
+  .hero-image {
+    margin-top: var(--spacing-8);
+  }
+  
+  .hero-image img {
+    transform: none;
+  }
+  
+  .hero-image:hover img {
+    transform: translateY(-5px);
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-input {
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-4);
+  }
+  
+  .newsletter-form .btn {
+    border-radius: var(--radius-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+  
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}
